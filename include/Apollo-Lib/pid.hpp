@@ -22,27 +22,32 @@ public:
                            int big_exit_time = 0, double big_error = 0,
                            int velocity_exit_time = 0, int mA_timeout = 0);
   struct Gains {
-    double gains_kP;
-    double gains_kI;
-    double gains_kD;
-    double gains_start_kI;
+    double kP;
+    double kI;
+    double kD;
+    double start_kI;
   };
-  struct PID_exit_conditions {
-    int exit_small_exit_time = 0;
-    double exit_small_error = 0;
-    int exit_big_exit_time = 0;
-    double exit_big_error = 0;
-    int exit_velocity_exit_time = 0;
-    int exit_mA_timeout = 0;
+  struct Exit_Conditions {
+    int small_time = 0;
+    double small_error = 0;
+    int big_time = 0;
+    double big_error = 0;
+    int velocity_timeout = 0;
+    int mA_timeout = 0;
   };
   Gains get_gains();
   Gains gains;
-  PID_exit_conditions exit_conditions;
+  Exit_Conditions exit_conditions;
   void set_target(double input_target);
   void set_name(std::string input_name);
   double compute_target(double current_value);
   double get_target();
   void reset_variables();
+  apollo::pid_exit_output exit_condition(bool print = false);
+  apollo::pid_exit_output exit_condition(pros::Motor sensor,
+                                         bool print = false);
+  apollo::pid_exit_output exit_condition(std::vector<pros::Motor> sensor,
+                                         bool print = false);
   double output_value;
   double current_value;
   double target_value;
@@ -54,6 +59,10 @@ public:
   long previous_time;
 
 private:
+  int timer_i = 0, timer_j = 0, timer_k = 0, timer_l = 0;
+  bool is_overcurrent = false;
+  void reset_timers();
   std::string name;
-  bool is_name_set;
+  bool is_name_set = false;
+  void print_exit_condition(apollo::pid_exit_output exit_condition_type);
 };

@@ -54,6 +54,14 @@ enum pid_exit_output {
   ERROR_NO_CONSTANTS = 6
 };
 /**
+ * @brief Exit Condition to String: Converts the given PID exit output to a
+ * string.
+ *
+ * @param input The PID exit output.
+ * @return std::string Returns a string with the formatted PID exit condition as a string.
+ */
+std::string exit_condition_to_string(pid_exit_output input);
+/**
  * @brief Util: The main namespace for utility functions and variables.
  *
  */

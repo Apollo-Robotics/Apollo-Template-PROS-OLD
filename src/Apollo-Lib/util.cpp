@@ -15,7 +15,7 @@ pros::Controller master(pros::E_CONTROLLER_MASTER);
 namespace apollo {
 
 int mode = DISABLE;
-std::string exit_to_string(pid_exit_output input) {
+std::string exit_condition_to_string(pid_exit_output input) {
   switch ((int)input) {
   case RUNNING:
     return "Running";
