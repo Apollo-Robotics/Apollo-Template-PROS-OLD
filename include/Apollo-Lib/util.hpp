@@ -41,6 +41,19 @@ enum joystick_swing_type { LEFT_SWING = 0, RIGHT_SWING = 1 };
  */
 enum drivetrain_mode { DISABLE = 0, SWING = 1, TURN = 2, DRIVE = 3 };
 /**
+ * @brief PID Exit Output: Defines the possible exit outputs in the terminal for
+ * if a PID loop exits.
+ *
+ */
+enum pid_exit_output {
+  RUNNING = 1,
+  SMALL_EXIT = 2,
+  BIG_EXIT = 3,
+  VELOCITY_EXIT = 4,
+  mA_EXIT = 5,
+  ERROR_NO_CONSTANTS = 6
+};
+/**
  * @brief Util: The main namespace for utility functions and variables.
  *
  */
