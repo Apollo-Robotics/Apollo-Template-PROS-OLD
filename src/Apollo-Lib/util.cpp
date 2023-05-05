@@ -4,17 +4,19 @@
  * @brief Util namespace function definitions
  * @version 0.1.0
  * @date 2023-05-05
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 #include "main.h"
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
-int mode = apollo::DISABLE;
-double apollo::util::slew(double target, double current,
-                          double maximum_change) {
+namespace apollo {
+
+int mode = DISABLE;
+namespace util {
+double slew(double target, double current, double maximum_change) {
   double change = target - current;
   if (maximum_change == 0) {
     return target;
@@ -25,14 +27,9 @@ double apollo::util::slew(double target, double current,
   }
   return current + change;
 }
-double apollo::util::radians_to_degrees(double radians) {
-  return radians * 180 / M_PI;
-}
-double apollo::util::degrees_to_radians(double degrees) {
-  return degrees * M_PI / 180;
-}
-double apollo::util::angle_error(double angle_1, double angle_2,
-                                 bool is_radians) {
+double radians_to_degrees(double radians) { return radians * 180 / M_PI; }
+double degrees_to_radians(double degrees) { return degrees * M_PI / 180; }
+double angle_error(double angle_1, double angle_2, bool is_radians) {
   double maximum = is_radians ? 2 * M_PI : 360;
   double half = is_radians ? M_PI : 180;
   angle_1 = fmod(angle_1, maximum);
@@ -45,7 +42,7 @@ double apollo::util::angle_error(double angle_1, double angle_2,
   }
   return error;
 }
-double apollo::util::error(double input_1, double input_2) {
+double error(double input_1, double input_2) {
   double maximum, half;
   if (input_1 > input_1) {
     maximum = input_1;
@@ -66,7 +63,7 @@ double apollo::util::error(double input_1, double input_2) {
   }
   return error;
 }
-double apollo::util::sign(double input) {
+double sign(double input) {
   if (input < 0) {
     return -1;
   } else if (input > 0) {
@@ -75,15 +72,15 @@ double apollo::util::sign(double input) {
     return 0;
   }
 }
-double apollo::util::reverse(double input) { return -input; }
-double apollo::util::average(std::vector<double> inputs) {
+double reverse(double input) { return -input; }
+double average(std::vector<double> inputs) {
   double sum = 0;
   for (float input : inputs) {
     sum += input;
   }
   return sum / inputs.size();
 }
-double apollo::util::clip_number(double input, double minimum, double maximum) {
+double clip_number(double input, double minimum, double maximum) {
   if (input > maximum) {
     return maximum;
   } else if (input < minimum) {
@@ -91,9 +88,11 @@ double apollo::util::clip_number(double input, double minimum, double maximum) {
   }
   return input;
 }
-bool apollo::util::is_negative(double input) {
+bool is_negative(double input) {
   if (input < 0) {
     return true;
   }
   return false;
 }
+}; // namespace util
+}; // namespace apollo
