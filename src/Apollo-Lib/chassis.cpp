@@ -11,6 +11,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     right_drive_motors.push_back(temp);
   }
+  inertial_sensor = nullptr;
 }
 Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  std::vector<int> right_drive_motor_ports,
@@ -218,6 +219,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     back_right_drive_motors.push_back(temp);
   }
+  inertial_sensor = nullptr;
 }
 Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  std::vector<int> back_left_drive_motor_ports,
