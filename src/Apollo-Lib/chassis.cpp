@@ -3,6 +3,7 @@ namespace apollo {
 Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  std::vector<int> right_drive_motor_ports,
                  double wheel_diameter, double gear_ratio, int cartidge_rpms) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -17,6 +18,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  std::vector<int> right_drive_motor_ports,
                  double wheel_diameter, double gear_ratio, int cartidge_rpms,
                  int inertial_sensor_port) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -34,6 +36,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  int inertial_sensor_port,
                  std::vector<int> left_encoder_tracking_wheel_ports,
                  std::vector<int> right_encoder_tracking_wheel_ports) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -62,6 +65,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> center_encoder_tracking_wheel_ports) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -94,6 +98,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  int inertial_sensor_port, int expander_port,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -122,6 +127,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports,
                  std::vector<int> center_encoder_tracking_wheel_ports) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -154,6 +160,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  int inertial_sensor_port,
                  int right_rotation_tracking_wheel_port,
                  int left_rotation_tracking_wheel_port) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -178,6 +185,7 @@ Chassis::Chassis(std::vector<int> left_drive_motor_ports,
                  int right_rotation_tracking_wheel_port,
                  int left_rotation_tracking_wheel_port,
                  int center_rotation_tracking_wheel_port) {
+  chassis_type = tank_drive;
   for (auto i : left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     left_drive_motors.push_back(temp);
@@ -203,6 +211,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  std::vector<int> front_right_drive_motor_ports,
                  std::vector<int> back_right_drive_motor_ports,
                  double wheel_diameter, double gear_ratio, int cartidge_rpms) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -227,6 +236,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  std::vector<int> back_right_drive_motor_ports,
                  double wheel_diameter, double gear_ratio, int cartidge_rpms,
                  int inertial_sensor_port) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -254,6 +264,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  int inertial_sensor_port,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -292,6 +303,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports,
                  std::vector<int> center_encoder_tracking_wheel_ports) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -334,6 +346,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  int inertial_sensor_port, int expander_port,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -372,6 +385,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  std::vector<int> right_encoder_tracking_wheel_ports,
                  std::vector<int> left_encoder_tracking_wheel_ports,
                  std::vector<int> center_encoder_tracking_wheel_ports) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -415,6 +429,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  int right_rotation_tracking_wheel_port,
                  int left_rotation_tracking_wheel_port) {
   for (auto i : front_left_drive_motor_ports) {
+    chassis_type = holonomic_drive;
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
   }
@@ -448,6 +463,7 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
                  int right_rotation_tracking_wheel_port,
                  int left_rotation_tracking_wheel_port,
                  int center_rotation_tracking_wheel_port) {
+  chassis_type = holonomic_drive;
   for (auto i : front_left_drive_motor_ports) {
     pros::Motor temp = pros::Motor(abs(i), util::reverse(i));
     front_left_drive_motors.push_back(temp);
@@ -476,4 +492,5 @@ Chassis::Chassis(std::vector<int> front_left_drive_motor_ports,
       pros::Rotation(center_rotation_tracking_wheel_port);
   center_rotation_tracking_wheel = &temp_center_rotation_tracking_wheel;
 }
-} // namespace apollo
+
+}; // namespace apollo

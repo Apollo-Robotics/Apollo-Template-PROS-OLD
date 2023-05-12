@@ -8,13 +8,7 @@ public:
   int joystick_threshold;
   enum joystick_swing_type { LEFT = 0, RIGHT = 1 };
   enum joystick_split_type { SINGLE = 0, SPLIT = 1 };
-  enum chassis_type {
-    TANK_DRIVE,
-    X_DRIVE,
-    ASTERISK_DRIVE,
-    MECCANUM_DRIVE,
-    H_DRIVE,
-  };
+  int current_mA = 2500;
   pros::motor_brake_mode_e_t chassis_brake_type =
       pros::motor_brake_mode_e_t::E_MOTOR_BRAKE_COAST;
   std::vector<pros::Motor> left_drive_motors;
@@ -134,13 +128,12 @@ public:
   void set_joystick_threshold(int threshold);
   void reset_drive_sensors();
   void set_tank(int left_voltage, int right_voltage);
+  void set_drive_current_limit(int mA);
   void set_drive_brake(pros::motor_brake_mode_e_t brake_type);
-  void reset_right_chassis_sensor();
   int right_chassis_sensor();
   int get_right_chassis_velocity();
   double get_right_chassis_power();
   bool is_right_chassis_over_current();
-  void reset_left_chassis_sensor();
   int left_chassis_sensor();
   int get_left_chassis_velocity();
   double get_left_chassis_power();
@@ -167,5 +160,11 @@ private:
 #define tracking_encoder 2
 #define tracking_rotation 3
   int tracker_type = motor_integrated;
+#define tank_drive 1
+#define holonomic_drive 2
+  //#define asterisk_drive 3
+  //#define meccanum_drive 4
+  //#define h_drive 5
+  int chassis_type;
 };
 }; // namespace apollo
