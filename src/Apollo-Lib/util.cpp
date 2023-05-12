@@ -13,27 +13,6 @@
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
 namespace apollo {
-
-int mode = DISABLE;
-std::string exit_condition_to_string(pid_exit_output input) {
-  switch ((int)input) {
-  case RUNNING:
-    return "Running";
-  case SMALL_EXIT:
-    return "Small";
-  case BIG_EXIT:
-    return "Big";
-  case VELOCITY_EXIT:
-    return "Velocity";
-  case mA_EXIT:
-    return "mA";
-  case ERROR_NO_CONSTANTS:
-    return "Error: Exit condition constants not set!";
-  default:
-    return "Error: Out of bounds!";
-  }
-  return "Error: Out of bounds!";
-}
 namespace util {
 double slew(double target, double current, double maximum_change) {
   double change = target - current;

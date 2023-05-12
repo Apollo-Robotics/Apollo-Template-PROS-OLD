@@ -43,11 +43,6 @@ public:
   double compute_target(double current_value);
   double get_target();
   void reset_variables();
-  apollo::pid_exit_output exit_condition(bool print = false);
-  apollo::pid_exit_output exit_condition(pros::Motor sensor,
-                                         bool print = false);
-  apollo::pid_exit_output exit_condition(std::vector<pros::Motor> sensor,
-                                         bool print = false);
   double output_value;
   double current_value;
   double target_value;
@@ -59,10 +54,6 @@ public:
   long previous_time;
 
 private:
-  int timer_i = 0, timer_j = 0, timer_k = 0, timer_l = 0;
-  bool is_overcurrent = false;
-  void reset_timers();
   std::string name;
   bool is_name_set = false;
-  void print_exit_condition(apollo::pid_exit_output exit_condition_type);
 };

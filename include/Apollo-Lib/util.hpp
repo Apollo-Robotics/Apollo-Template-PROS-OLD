@@ -10,7 +10,6 @@
  */
 #pragma once
 #include "api.h"
-#include <vector>
 /**
  * @brief Controller Master: Global instance of the V5 Controller.
  *
@@ -21,50 +20,6 @@ extern pros::Controller master;
  *
  */
 namespace apollo {
-/**
- * @brief Joystick Split Type: Defines if the joystick control is split between
- * both joysticks or not.
- *
- */
-enum joystick_split_type { SINGLE = 0, SPLIT };
-/**
- * @brief Joystick Swing Type: Defines if the y-axis (forwards and backwards) is
- * on the left or right joystick. The x-axis will take the other joystick when
- * the type is split or will be on the same joystick when the type is single.
- *
- */
-enum joystick_swing_type { LEFT_SWING = 0, RIGHT_SWING = 1 };
-/**
- * @brief Drivetrain Mode: Defines the drive mode of the drivetrain when in
- * autonomous.
- *
- */
-enum drivetrain_mode { DISABLE = 0, SWING = 1, TURN = 2, DRIVE = 3 };
-/**
- * @brief PID Exit Output: Defines the possible exit outputs in the terminal for
- * if a PID loop exits.
- *
- */
-enum pid_exit_output {
-  RUNNING = 1,
-  SMALL_EXIT = 2,
-  BIG_EXIT = 3,
-  VELOCITY_EXIT = 4,
-  mA_EXIT = 5,
-  ERROR_NO_CONSTANTS = 6
-};
-/**
- * @brief Exit Condition to String: Converts the given PID exit output to a
- * string.
- *
- * @param input The PID exit output.
- * @return std::string Returns a string with the formatted PID exit condition as a string.
- */
-std::string exit_condition_to_string(pid_exit_output input);
-/**
- * @brief Util: The main namespace for utility functions and variables.
- *
- */
 namespace util {
 /**
  * @brief Slew: idk rlly what it does i was just told to add it :/
