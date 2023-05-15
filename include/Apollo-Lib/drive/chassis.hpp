@@ -2,6 +2,7 @@
 #include "api.h"
 namespace apollo {
 class Chassis {
+public:
   enum joystick_split_mode { SINGLE = 0, SPLIT = 1 };
   enum joystick_swing_mode { LEFT = 0, RIGHT = 1 };
   int joystick_threshold;

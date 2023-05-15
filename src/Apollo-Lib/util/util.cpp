@@ -1,17 +1,5 @@
-/**
- * @file util.cpp
- * @author Nikhil Gajjar
- * @brief Util namespace function definitions
- * @version 0.1.0
- * @date 2023-05-05
- *
- * @copyright Copyright (c) 2023
- *
- */
 #include "main.h"
-
 pros::Controller master(pros::E_CONTROLLER_MASTER);
-
 namespace apollo {
 namespace util {
 double slew(double target, double current, double maximum_change) {
