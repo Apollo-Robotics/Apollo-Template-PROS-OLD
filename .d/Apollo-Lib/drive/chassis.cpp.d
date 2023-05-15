@@ -1,5 +1,5 @@
-bin/Apollo-Lib/util.cpp.o: src/Apollo-Lib/util.cpp include/main.h \
- include/api.h include/pros/adi.h include/pros/colors.h \
+bin/Apollo-Lib/drive/chassis.cpp.o: src/Apollo-Lib/drive/chassis.cpp \
+ include/main.h include/api.h include/pros/adi.h include/pros/colors.h \
  include/pros/distance.h include/pros/error.h include/pros/ext_adi.h \
  include/pros/adi.h include/pros/adi.h include/pros/gps.h \
  include/pros/imu.h include/pros/link.h include/pros/llemu.h \
@@ -76,8 +76,11 @@ bin/Apollo-Lib/util.cpp.o: src/Apollo-Lib/util.cpp include/main.h \
  include/pros/rotation.hpp include/pros/rotation.h include/pros/rtos.hpp \
  include/pros/screen.hpp include/pros/screen.h include/pros/vision.hpp \
  include/pros/vision.h include/pros/link.hpp include/pros/link.h \
- include/Apollo-Lib/api.hpp include/Apollo-Lib/chassis/chassis.hpp \
- include/api.h include/Apollo-Lib/util.hpp
+ include/Apollo-Lib/api.hpp \
+ include/Apollo-Lib/drive/autonomous_control.hpp \
+ include/Apollo-Lib/drive/chassis.hpp include/api.h \
+ include/Apollo-Lib/drive/user_control.hpp \
+ include/Apollo-Lib/util/pid.hpp include/Apollo-Lib/util/util.hpp
 include/main.h:
 include/api.h:
 include/pros/adi.h:
@@ -232,6 +235,9 @@ include/pros/vision.h:
 include/pros/link.hpp:
 include/pros/link.h:
 include/Apollo-Lib/api.hpp:
-include/Apollo-Lib/chassis/chassis.hpp:
+include/Apollo-Lib/drive/autonomous_control.hpp:
+include/Apollo-Lib/drive/chassis.hpp:
 include/api.h:
-include/Apollo-Lib/util.hpp:
+include/Apollo-Lib/drive/user_control.hpp:
+include/Apollo-Lib/util/pid.hpp:
+include/Apollo-Lib/util/util.hpp:
