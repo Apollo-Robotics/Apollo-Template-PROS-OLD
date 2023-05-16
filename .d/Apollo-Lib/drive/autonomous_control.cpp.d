@@ -77,11 +77,9 @@ bin/Apollo-Lib/drive/autonomous_control.cpp.o: \
  include/pros/rotation.hpp include/pros/rotation.h include/pros/rtos.hpp \
  include/pros/screen.hpp include/pros/screen.h include/pros/vision.hpp \
  include/pros/vision.h include/pros/link.hpp include/pros/link.h \
- include/Apollo-Lib/api.hpp \
- include/Apollo-Lib/drive/autonomous_control.hpp \
- include/Apollo-Lib/drive/chassis.hpp include/api.h \
- include/Apollo-Lib/drive/user_control.hpp \
- include/Apollo-Lib/util/pid.hpp include/Apollo-Lib/util/util.hpp
+ include/Apollo-Lib/api.hpp include/Apollo-Lib/drive/chassis.hpp \
+ include/api.h include/Apollo-Lib/util/pid.hpp \
+ include/Apollo-Lib/util/util.hpp
 include/main.h:
 include/api.h:
 include/pros/adi.h:
@@ -236,9 +234,7 @@ include/pros/vision.h:
 include/pros/link.hpp:
 include/pros/link.h:
 include/Apollo-Lib/api.hpp:
-include/Apollo-Lib/drive/autonomous_control.hpp:
 include/Apollo-Lib/drive/chassis.hpp:
 include/api.h:
-include/Apollo-Lib/drive/user_control.hpp:
 include/Apollo-Lib/util/pid.hpp:
 include/Apollo-Lib/util/util.hpp:
