@@ -113,6 +113,7 @@ void autonomous() {}
  */
 void opcontrol() {
   while (true) {
+    chassis.arcade_control(Chassis::SPLIT, Chassis::RIGHT);
     pros::delay(apollo::util::delay_time);
   }
 }

@@ -3,9 +3,6 @@
 namespace apollo {
 class Chassis {
 public:
-  enum joystick_split_mode { SINGLE = 0, SPLIT = 1 };
-  enum joystick_swing_mode { LEFT = 0, RIGHT = 1 };
-  int joystick_threshold;
   pros::motor_brake_mode_e_t drive_current_brake_mode =
       pros::E_MOTOR_BRAKE_COAST;
   pros::ADIEncoder left_encoder_tracking_wheel;
@@ -88,6 +85,12 @@ public:
           int center_rotation_tracking_wheel_ports,
           double tracking_wheel_gear_ratio, double tracking_wheel_diameter);
   void calculate_tracker_variables();
+  enum joystick_split_mode { SINGLE = 0, SPLIT = 1 };
+  enum joystick_split { LEFT = 0, RIGHT = 1 };
+  int joystick_threshold;
+  void arcade_control(joystick_split_mode split_mode,
+                      joystick_split split);
+  void tank_control();
 
 private:
 #define tracker_motor_integrated 1;
