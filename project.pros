@@ -164,7 +164,7 @@
                     "include/main.h"
                 ],
                 "version": "3.8.0"
-            },
+            }
         },
         "upload_options": {}
     }
