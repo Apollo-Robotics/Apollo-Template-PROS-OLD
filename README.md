@@ -1,6 +1,6 @@
 ---
 layout: Default
-title: Apollo-Lib
+title: Apollo
 ---
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
@@ -20,8 +20,8 @@ A custom template based on the PROS (Purdue Robotics Operating System) meant to 
 3. In the PROS CLI apply the template using the following commands:
 
 ```
-prosv5 c fetch Apollo-Lib@x.x.x.zip
-prosv5 c apply Apollo-Lib
+prosv5 c fetch Apollo@x.x.x.zip
+prosv5 c apply Apollo
 ```
 
 &emsp;&emsp;(`x.x.x` is the version of the downloaded library that is being installed)
@@ -29,11 +29,11 @@ prosv5 c apply Apollo-Lib
 &emsp;&emsp;Example:
 
 ```
-prosv5 c fetch Apollo-Lib@0.1.0.zip
-prosv5 c apply Apollo-Lib
+prosv5 c fetch Apollo@0.1.0.zip
+prosv5 c apply Apollo
 ```
 
-4. Once the commands have been executed and the program installed, add `#include "Apollo-Lib/api.hpp"` anywhere in `main.h`
+4. Once the commands have been executed and the program installed, add `#include "Apollo/api.hpp"` anywhere in `main.h`
 5. Once done, intialize the drivetrain in any `.cpp` or `.c` file, such as main.cpp
 
 &emsp;&emsp;To initialize, define a chassis using the `Chassis` class and give it a name, like such:
