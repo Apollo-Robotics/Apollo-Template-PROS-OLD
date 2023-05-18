@@ -1,63 +1,4 @@
 #include "main.h"
-using namespace apollo;
-Chassis chassis(
-    // Left Chassis Motor Ports:
-    //     Ports of your left drivetrain Motors (- will reverse a motor's
-    //     direction!)
-    {1, 2, 3},
-    // Right Chassis Motor Ports:
-    //     Ports of your right drivetrain Motors (- will reverse a motor's
-    //     direction!)
-    {-4, -5, -6},
-    // Cartridge RPM's:
-    //     RPM's of your chassis!
-    //     Red is 100 RPMs
-    //     Green is 200 RPMs
-    //     Blue is 600 RPMs
-    600,
-    // Wheel Diameter:
-    //     Diameter of your drivetrain's wheels!
-    //     (Remeber 4" wheels are actually 4.125")
-    3.25,
-    // Gear Ratio:
-    //     Gear ratio of your drivetrain!
-    //     (Remember gear ratio is ouptut/input)
-    1.66,
-    // Inertial Sensor Port:
-    //     Port of your inertial sensor!
-    7
-    // Left Tracking Wheel Ports:
-    //     Encoders used for odometry!
-    //     Uncomment if using Encoders
-    //       ,{1, 2},
-    //     Uncomment if using Rotation Sensors
-    //       8,
-    // Left Tracking Wheel Ports:
-    //     Encoders used for odometry!
-    //     Uncomment if using Encoders
-    //       {3,4},
-    //     Uncomment if using Rotation Sensors
-    //       9,
-    // Left Tracking Wheel Ports:
-    //     Encoders used for odometry!
-    //     Uncomment if using Encoders
-    //       {5, 6},
-    //     Uncomment if using Rotation Sensors
-    //       10,
-    // Tracking Wheel Gear Ratio:
-    //     Gear ratio used on the tracking wheels!
-    //     Uncomment if using tracking wheels
-    //      1
-    // Tracking Wheel Diameter:
-    //     Diameter of tracking wheels!
-    //     Uncomment if using tracking wheels
-    //      2.75,
-    // Expander Smart Port:
-    //     V5 smart port of the 3-wire expander, if 3-wire trackers are plugged
-    //     into them
-    //     Uncomment if using a 3-wire expander
-    //      11
-);
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -113,7 +54,6 @@ void autonomous() {}
  */
 void opcontrol() {
   while (true) {
-    chassis.arcade_control(Chassis::SPLIT, Chassis::RIGHT);
-    pros::delay(apollo::util::delay_time);
+    pros::delay(10);
   }
 }
